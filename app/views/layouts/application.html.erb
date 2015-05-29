@@ -4,11 +4,28 @@
   <title>QuickBlog</title>
   <%= stylesheet_link_tag    'application', media: 'all' %>
   <%= javascript_include_tag 'application' %>
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <!-- Latest compiled and minified JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+  <%= favicon_link_tag 'favicon.ico' %>
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <!--Nav bar-->
+  <%= render "posts/top_navbar" %>
 
-<%= yield %>
+  <div class="well well-lg">
+    <p>Find the latest posts here</p>
+  </div>
+
+  <div class="container-fluid">
+      <%= yield %>
+  </div>
+
+
 
 </body>
 </html>
